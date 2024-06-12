@@ -73,6 +73,10 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_A99BCFD01CB8492CB2995442095CA1E2 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_4ED69ABB014E4828A8915487844F96E9 }}
 
+      - name: 'Run az commands'
+        run: |
+          az login
+
       - name: 'Run Azure Functions Action'
         uses: Azure/functions-action@v1
         id: fa
